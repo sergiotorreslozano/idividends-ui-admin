@@ -1,0 +1,16 @@
+language: java
+jdk:
+- oraclejdk8
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app:
+    master: idividends-ui-admin
+  on:
+    repo: sergiotorreslozano/idividends-ui-admin
+  api_key:
+    secure: 4GzG7D2h+IzXR/hNdqsEsF4q9z00OIFUdXGexV+fN7OugB/6LA3h5lqwgTEcVpIL9V7eNnlpU0IOBCitdON+ptyRsgvoIrLmeqSkFZKnlCy7hXn2XSORxFehd41zYH9GJgV14pIHsjpikrRN+W8TCOpJ2C6UzCwWrSipGVapwlHlwwhxwBSFTJt8waJ4RXgoXuOB6XuokznpigmfrdNwaGw/YIhN+jFAgYSyzex/KHnMqv4cJ7ArAilX3cD7gvf2YPEfxZl+IWBLjgb1eFXTjJnpWGRgOPwr52yeD3U6RJvxMVoo7jLSkKNcxMZB4y0BcaVTNI/6U8NoKdwrCXSZA55MvpQ0iZDWYdcVojh6sY0fmox66guDybShWnKPkC3xmPXPYkhbSfG3jP/pjPIeoHBNFyrI10/P/r5e/VNS/3i0haRj02HA7qGLAGEU4Y1p2qcj+wDXdSzSNdQN2/cyK0ezIjoaQjsMXTcsN5N5qdO578wDPr92ftHZjOheOeam8ZGWpoa/EqbGjNzprEKHNkkTHJVCujZHn16RlRZYEBujzb15hteWuiQHGkpuEo5Lt7j7x8Mro6olAq9IMIs2Dvb3XadX11RtPBGSZUKfrNucGhw1IOb3HwOROOe5ntuKFgmxu8uQ+sdq8ylfhTtGZ4OcLGOsAUg09XFBLh7Hunc=
+script: mvn test -B -Dspring.profiles.active=test
